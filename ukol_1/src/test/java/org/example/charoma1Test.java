@@ -1,10 +1,8 @@
 package org.example;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
-
-class charoma1Test {
+public class charoma1Test {
     @Test
     public void testFactorial5(){
         charoma1 testt = new charoma1();
