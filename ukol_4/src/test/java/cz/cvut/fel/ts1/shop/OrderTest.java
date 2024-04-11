@@ -1,4 +1,4 @@
-package jUnit.shop;
+package cz.cvut.fel.ts1.shop;
 
 import cz.cvut.fel.ts1.shop.Item;
 import cz.cvut.fel.ts1.shop.Order;
