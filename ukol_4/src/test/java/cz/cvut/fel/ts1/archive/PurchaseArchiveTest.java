@@ -21,7 +21,7 @@ public class PurchaseArchiveTest {
 
 
     private final HashMap<Integer, ItemPurchaseArchiveEntry> itemPurchaseArchive = new HashMap<>();
-    private ArrayList<Order> orderArchive;
+    private final ArrayList<Order> orderArchive = new ArrayList<>();
     PurchasesArchive archiveShort = new PurchasesArchive();
     PurchasesArchive archiveLong = new PurchasesArchive(itemPurchaseArchive, orderArchive);
 
@@ -70,6 +70,16 @@ public class PurchaseArchiveTest {
         assertEquals(expected,archiveShort.getOrderArchive());
 
     }
+
+    @Test
+    public void testPutOrderToPurchasesArchive_lengthOfArchive_long(){
+        Order order = new Order(new ShoppingCart(), "Pepa", "Praha");
+        ArrayList <Order> expected = archiveLong.getOrderArchive();
+        expected.add(order);
+        archiveLong.putOrderToPurchasesArchive(order);
+        assertEquals(expected,archiveLong.getOrderArchive());
+
+    }
     @Test
     public void testPutOrderToPurchasesArchive_items(){
         Order order = new Order(new ShoppingCart(), "Pepa", "Praha");
@@ -86,6 +96,25 @@ public class PurchaseArchiveTest {
 
         archiveShort.putOrderToPurchasesArchive(order);
         assertEquals(expected,archiveShort.getOrderArchive());
+
+    }
+
+    @Test
+    public void testPutOrderToPurchasesArchive_items_long(){
+        Order order = new Order(new ShoppingCart(), "Pepa", "Praha");
+        ArrayList <Order> expected = archiveLong.getOrderArchive();
+        ArrayList<Item> items = order.getItems();
+        for(Item i : items){
+            if(itemPurchaseArchive.containsKey(i.getID())){
+                ItemPurchaseArchiveEntry e = itemPurchaseArchive.get(i.getID());
+                e.increaseCountHowManyTimesHasBeenSold(1);
+            }else{
+                itemPurchaseArchive.put(i.getID(), new ItemPurchaseArchiveEntry(i));
+            }
+        }
+
+        archiveLong.putOrderToPurchasesArchive(order);
+        assertEquals(expected,archiveLong.getOrderArchive());
 
     }
 
