@@ -18,6 +18,7 @@ public class ItemPurchaseArchiveEntryTest {
         ItemPurchaseArchiveEntry ItemPurchaseArchiveEntryTest = new ItemPurchaseArchiveEntry(refItemMock);
         assertEquals(1,ItemPurchaseArchiveEntryTest.getSoldCount());
     }
+
     @Test
     public void testItemPurchaseArchiveEntry_notNull(){
         HashMap<Integer, ItemPurchaseArchiveEntry> itemPurchaseArchiveEntryMock = mock(HashMap.class);
