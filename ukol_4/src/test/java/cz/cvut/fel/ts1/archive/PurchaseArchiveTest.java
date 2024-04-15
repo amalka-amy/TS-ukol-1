@@ -4,6 +4,7 @@ import cz.cvut.fel.ts1.shop.Item;
 import cz.cvut.fel.ts1.shop.Order;
 import cz.cvut.fel.ts1.shop.ShoppingCart;
 import org.junit.Test;
+import org.mockito.*;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
@@ -11,6 +12,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.mockito.Mockito.mock;
 
 public class PurchaseArchiveTest {
 
@@ -92,9 +95,9 @@ public class PurchaseArchiveTest {
         archiveLong.putOrderToPurchasesArchive(order);
         assertEquals(expected,archiveLong.getOrderArchive());
     }
-
-
-
-
-
+    @Test
+    public void testOrderArchive_notNull(){
+        ArrayList<Order> orderArchiveMock = mock(ArrayList.class);
+        assertNotNull(orderArchiveMock);
+    }
 }
