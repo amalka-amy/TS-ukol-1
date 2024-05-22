@@ -6,9 +6,10 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="ukol_4" />
         <module name="ukol_1" />
         <module name="Selenium" />
+        <module name="ukol_7" />
+        <module name="ukol_4" />
       </profile>
     </annotationProcessing>
   </component>
