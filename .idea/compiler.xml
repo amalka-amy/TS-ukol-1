@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="ukol_1" />
         <module name="Selenium" />
+        <module name="ukol_posledni" />
         <module name="ukol_7" />
         <module name="ukol_4" />
       </profile>
